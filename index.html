@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/jquery-3.7.1.min.js"></script>
     <title>Ajaxa com Json</title>
 </head>
 
@@ -16,28 +15,26 @@
     <br><br><br>
 
     <div class="block-main">
-        <div class="block-form">
-            <div class="row mb-3">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Nome:</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputNome">
+        <form id="form">
+            <div class="block-form">
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Nome:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" name="name">
+                    </div>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Email:</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail">
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="email" name="email">
+                    </div>
                 </div>
+                <input type="submit" name="" id="" class="btn btn-primary" value="Gravar" form="form">
+                <input type="button" class="btn btn-warning" value="Limpar" form="form">
+                <br><br>
+                <input type="button" value="Atualizar página" class="btn btn-info">
             </div>
-            <div class="btn-group">
-                <a href="#" class="btn btn-success">Gravar</a>
-                <a href="#" class="btn btn-warning">Limpar</a>
-            </div>
-            <br><br>
-            <div class="button-att">
-                <button type="button" class="btn btn-info">Atualizar Página</button>
-            </div>
-        </div>
+        </form>
         <div class="block-table">
             <table class="table table-hover">
                 <thead class="thead-dark">
@@ -48,20 +45,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Gustavo</td>
-                        <td>gustavo@email.com</td>
-                        <td><button type="button" class="btn btn-danger">Excluir</button></td>
-                    </tr>
-                    <tr>
-                        <td>Renan</td>
-                        <td>renan@email.com</td>
-                        <td><button type="button" class="btn btn-danger">Excluir</button></td>
-                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>
