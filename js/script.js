@@ -1,11 +1,11 @@
-$('form1').submit(function (e) { 
+$('#form1').submit(function (e) { 
     e.preventDefault();
     
     
     var u_name = $('#name').val();
     var u_email = $('#email').val();
 
-    //console.log(u_email, u_name);
+    console.log(u_email, u_name);
 
     $.ajax({
         method: 'POST',
@@ -16,22 +16,21 @@ $('form1').submit(function (e) {
         $('name').val('');
         $('email').val('');
         console.log(result);
-    });
+    }); 
 });
 
-function getEmail() {
+function getData() {
     $.ajax({
         method: 'GET',
         url: 'https://epansani.com.br/2023/dw1s4/ajax/list.php',
-        dataType: "json"
+        dataType: 'json'
     }).done(function(result){
         console.log(result);
-        
-        for(var i = 0; i<result.lenght; i++){
-            $('#table-body').prepend('<tr><td>Mark</td><td>Otto</td><td><button class="btn btn-danger">Apagar</button></td></tr>');
-        }
 
+        for(var i=0; i<result.length; i++){
+            $('.table').prepend('<tr><td>' + result[i].nome + '</td><td>' + result[i].email  + '</td><td><button type="button" class="btn btn-danger">Excluir</button></td></tr>');
+        }
     });
 }
 
-getEmail();
+getData();
