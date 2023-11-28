@@ -16,7 +16,9 @@ $('#form1').submit(function (e) {
         $('name').val('');
         $('email').val('');
         console.log(result);
-    }); 
+    }).then(function(result){
+        alert('Dado gravado com sucesso!');
+    });
 });
 
 function getData() {
@@ -28,8 +30,19 @@ function getData() {
         console.log(result);
 
         for(var i=0; i<result.length; i++){
-            $('.table').prepend('<tr><td>' + result[i].nome + '</td><td>' + result[i].email  + '</td><td><button type="button" class="btn btn-danger">Excluir</button></td></tr>');
+            $('.table').prepend('<tr><td>' + result[i].nome + '</td><td>' + result[i].email  + '</td><td><button type="button" class="btn btn-danger" onclick="deleteData()">Excluir</button></td></tr>');
         }
+    });
+}
+
+function deleteData(){
+    $.ajax({
+        method: 'POST',
+        url: 'https://epansani.com.br/2023/dw1s4/ajax/rem.php',
+        data: {id: id},
+        dataType:'json'
+    }).done(function(result){
+        console.log(result);
     });
 }
 
